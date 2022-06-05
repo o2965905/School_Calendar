@@ -1,0 +1,289 @@
+/*初始化start*/
+*{ 
+    margin: 0;
+    padding: 0;
+    font-family:Courier New, monospace;
+}
+/*初始化end*/
+
+
+/*body設定start*/
+body{
+    /*視窗高度 : 100vh*/
+    height: 100vh;
+    /*排版 : display:flex*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*背景 : 漸層設定*/
+    background: linear-gradient(200deg,#e3c5eb,#a9c1ed);
+    /*內容溢出 : 隱藏*/
+    overflow: hidden;
+}
+/*body設定end*/
+
+
+/*h1 start*/
+h1{ 
+    font-size: 100px;
+    color: #fff;
+    /*字體陰影*/
+    text-shadow:3px 3px 3px rgb(86, 84, 84);
+}
+/*h1 end*/
+
+
+/*包覆整個 php運算式 + table 的區塊 start*/
+.container{
+    /*定位*/
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    /*外邊框 : 圓角效果*/
+    border-radius: 15px;
+    /*排版布局 : display:flex*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*寬度*/
+    width: 700px;
+    /*高度*/
+    height: 600px;
+    /*陰影*/
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+/*包覆整個 php運算式 + table 的區塊 end*/
+
+
+/*日期的區塊 start*/
+.table {
+    /*寬度*/
+    width: 560px;
+    /*高度*/
+    height: 560px;
+    /*排版布局 : display:flex*/
+    display: flex;
+    flex-wrap: wrap;
+    align-content:center;
+    /*左外距*/
+    margin-left: 1px;
+    /*上外距*/
+    margin-top: 1px;
+}
+/*日期的區塊 end*/
+
+
+/*個別日期的區塊 start*/
+.table div { 
+    /*排版布局 : display:flex*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*高度*/
+    width: 80px;
+    /*寬度*/
+    height: 80px;
+    box-sizing: border-box;
+    margin-left: -1px;
+    margin-top: -1px;
+}
+/*個別日期的區塊 end*/
+
+
+/*日一二三四五六 的 css start*/
+.table div.header { 
+    /*底色*/
+    background: #e3c5eb;
+    /*字體顏色*/
+    color: #fff;
+    /*高度*/
+    height: 32px;
+    /*字體 : 粗體字*/
+    font-weight: bold;
+    /*字體大小 : 20px*/
+    font-size: 20px;
+    /*外邊框 : 圓角效果*/
+    border-radius: 50px;
+    /*陰影*/
+    box-shadow: 10px 10px 5px rgba(118, 108, 108, 0.2);
+}
+/*日一二三四五六 的 css end*/
+
+
+/*假日區塊 start*/
+.weekend{
+    /*字體顏色*/
+    color:red;
+  }
+/*假日區塊 end*/
+
+
+/*滑鼠移動到日期上的效果 start*/
+.table>:hover{ 
+    /*底色*/
+    background:#f3eef4;
+    /*外邊框 : 圓形效果*/
+    border-radius: 50px;
+    /*陰影*/
+    box-shadow: 10px 10px 5px rgba(118, 108, 108, 0.2);
+}
+/*滑鼠移動到日期上的效果 end*/
+
+
+/*控制切換月份的按鈕 start*/
+.nav { 
+    /*排版布局 : display:flex*/
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    /*字體效果 : 陰影*/
+    text-shadow:3px 3px 3px #e3c5eb;
+    /*上內距*/
+    padding-top: 40px;
+}
+/*控制切換月份的按鈕 end*/
+
+
+/*上個月按鈕 + 下個月按鈕 start*/
+.lastmonth{ 
+    /*右外距*/
+    margin-right: 50px;
+}
+.nextmonth{ 
+    /*左外距*/
+    margin-left: 50px;
+}
+/*上個月按鈕 + 下個月按鈕 end*/
+
+
+/*顯示幾年幾月 start*/
+.a1{
+    color: #89a0cb;
+    font-weight: bold;
+    font-size: 30px;
+}
+/*顯示幾年幾月 end*/
+
+
+/*上個月,下個月的a連結 start*/
+.nav>span>a{
+    color: #dba5ea;
+    /*字體裝飾 : 消除下底線*/
+    text-decoration: none;
+}
+
+.nav>span>a:hover{
+    color:#8db1f3;
+    /*字體裝飾 : 增加下底線*/
+    text-decoration: underline;
+    /*下底線顏色*/
+    text-decoration-color: #8db1f3;
+}
+/*上個月,下個月的a連結 end*/
+
+
+/*背景的小白點 start*/
+ul li{
+    position: absolute;
+    border: 1px solid #fff;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    /*定義式符號 : 不使用符號*/
+    list-style: none;
+    /*透明度*/
+    opacity: 0;
+}
+
+/*方形小白點*/
+.square li{
+    top: 40vh;
+    left: 60vw;
+    /*執行動畫  動畫名 時長 線性的 無限撥放*/
+    animation: square 10s linear infinite;
+}
+.square li:nth-child(2){
+    top: 80vh;
+    left: 10vw;
+    /*動畫延遲時間*/
+    animation-delay: 2s;
+}
+.square li:nth-child(3){
+    top: 80vh;
+    left: 85vw;
+    /*動畫延遲時間*/
+    animation-delay: 4s;
+}
+.square li:nth-child(4){
+    top: 10vh;
+    left: 70vw;
+    /*動畫延遲時間*/
+    animation-delay: 6s;
+}
+.square li:nth-child(5){
+    top: 10vh;
+    left: 10vw;
+    /*動畫延遲時間*/
+    animation-delay: 8s;
+}
+
+/*橢圓形小白點*/
+.circle li{
+    bottom: 0;
+    left: 15vw;
+     /*執行動畫 動畫名 時長 線性的 無限撥放*/
+    animation: circle 10s linear infinite;
+}
+.circle li:nth-child(2){
+    left: 35vw;
+    /*動畫延遲時間*/
+    animation-delay: 2s;
+}
+.circle li:nth-child(3){
+    left: 55vw;
+    /*動畫延遲時間*/
+    animation-delay: 4s;
+}
+.circle li:nth-child(4){
+    left: 75vw;
+    /*動畫延遲時間*/
+    animation-delay: 6s;
+}
+.circle li:nth-child(5){
+    left: 90vw;
+    /*動畫延遲時間*/
+    animation-delay: 8s;
+}
+/*背景的小白點 end*/
+
+
+/*動畫設定 start*/
+@keyframes square{
+    0%{
+        /* scale = 縮放效果 */
+        /* retate =  旋轉效果 */
+        transform: scale(0) rotateY(0deg);
+        /*不透明*/
+        opacity: 1;
+    }
+    100%{
+        transform: scale(5) rotateY(1000deg);
+        opacity: 0;
+    }
+}
+@keyframes circle{
+    0%{
+        transform: scale(0) rotateY(0deg);
+        opacity: 1;
+        bottom: 0;
+        border-radius: 0;
+    }
+    100%{
+        transform: scale(5) rotateY(1000deg);
+        opacity: 0;
+        bottom: 90vh;
+        border-radius: 50%;
+    }
+}
+/*動畫設定 end*/
